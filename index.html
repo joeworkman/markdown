@@ -34,7 +34,14 @@
         <h1>Markdown Engine Wrapper - Use Your Markdown Library of Choice in Ruby</h1>
 
 <ul>
-<li><a href="http://geraldb.github.com/markdown">geraldb.github.com/markdown</a></li>
+<li>home  :: <a href="https://github.com/geraldb/markdown">github.com/geraldb/markdown</a>
+</li>
+<li>bugs  :: <a href="https://github.com/geraldb/markdown/issues">github.com/geraldb/markdown/issues</a>
+</li>
+<li>gem   :: <a href="https://rubygems.org/gems/markdown">rubygems.org/gems/markdown</a>
+</li>
+<li>rdoc  :: <a href="http://rubydoc.info/gems/markdown">rubydoc.info/gems/markdown</a>
+</li>
 </ul><p>The Markdown Engine Wrapper (<code>markdown</code>) Ruby gem lets you use
 your markdown library of choice. Preconfigured markdown libraries include</p>
 
@@ -51,7 +58,24 @@ your markdown library of choice. Preconfigured markdown libraries include</p>
 <pre><code>require 'markdown'
 
 Markdown.new( 'Hello World' ).to_html
+
+# =&gt; "&lt;p&gt;Hello World&lt;/p&gt;\n"
 </code></pre>
+
+<h2>Usage - Web Service / HTTP (JSON) API - <code>GET /markdown</code>
+</h2>
+
+<p>Try the <code>markdown</code> HTTP (JSON) API running
+on Heroku <a href="http://hypertext.herokuapp.com"><code>hypertext.herokuapp.com</code></a>.</p>
+
+<p>Example:</p>
+
+<pre><code>GET /markdown?text=Hello+World!
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+</code></pre>
+
+<p>To start your own server/service use <code>markdown serve</code>. See command line below.</p>
 
 <h2>Usage - Command Line</h2>
 
@@ -70,6 +94,10 @@ Examples:
   markdown quickref          # Process document or folder using Markdown
   markdown quickref.text     # Process document using Markdown
   markdown -o site quickref  # Output documents to site folder
+
+Note:
+  markdown server            # Starts builtin markdown server
+                             #   (aliases for server include serve, service, s)
 </code></pre>
 
 <h2>Configuration - Markdown Engine Loading Order</h2>
@@ -120,7 +148,7 @@ redcarpet:
     - strikethrough
 </code></pre>
 
-<h2>Filters (Command Line Only)</h2>
+<h2>Configuration -Filters (Command Line Only)</h2>
 
 <p>For the command line tool only you can configure preprocessing filters to
 allow comments, Ruby helpers, and much more. Example:</p>
@@ -168,7 +196,7 @@ will skip everything until the end of the document.</p>
 
 <p>For more about filters see the <a href="http://geraldb.github.com/textutils"><code>textutils</code></a> gem.</p>
 
-<h2>Converters</h2>
+<h2>Configuration - Converters</h2>
 
 <p>The Markdown wrapper lets you configure different converter methods
 for each markdown engine. By default
@@ -190,15 +218,18 @@ the converter method <code>&lt;lib&gt;_to_html</code> gets used
 
 <h2>Real World Usage</h2>
 
-<p>The <a href="http://slideshow.rubyforge.org"><code>slideshow</code></a> (also known as Slide Show (S9)) gem
+<p>The <a href="http://slideshow-s9.github.io"><code>slideshow</code></a> (also known as Slide Show (S9)) gem
 that lets you create slide shows
 and author slides in plain text using a wiki-style markup language that's easy-to-write and easy-to-read.</p>
 
 <h2>Alternatives</h2>
 
-<p><a href="https://github.com/postmodern/multi_markdown"><code>multi_markdown</code></a> gem by Hal Brodigan</p>
-
-<h2>Questions? Comments?</h2>
+<ul>
+<li>
+<a href="https://github.com/postmodern/multi_markdown"><code>multi_markdown</code></a> gem by Hal Brodigan (aka postmodern)</li>
+<li>
+<a href="https://github.com/headius/markdown_meta"><code>markdown_meta</code></a> gem by Charles Oliver Nutter (aka headius)</li>
+</ul><h2>Questions? Comments?</h2>
 
 <p>Send them along to the
 <a href="http://groups.google.com/group/webslideshow">Free Web Slide Show Alternatives (S5, S6, S9, Slidy And Friends) Forum/Mailing List</a>.
